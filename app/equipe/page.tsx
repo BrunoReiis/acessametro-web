@@ -10,7 +10,7 @@ const team = [
     description: "Integra a experiência da interface aos serviços da aplicação, acompanhando o desenvolvimento de ponta a ponta.",
     contribution: "Front-end e back-end",
     icon: Code2,
-    image: "photo-1500648767791-00dcc994a43e",
+    image: "/assets/Bruno.jpeg",
     position: "center 35%",
   },
   {
@@ -19,7 +19,7 @@ const team = [
     description: "Transforma os fluxos do produto em interfaces simples de entender e consistentes em cada tela.",
     contribution: "Interface e experiência visual",
     icon: Monitor,
-    image: "photo-1506794778202-cad84cf45f1d",
+    image: "/assets/Vinicius.jpeg",
     position: "center 35%",
   },
   {
@@ -28,7 +28,7 @@ const team = [
     description: "Considera as necessidades de quem usa o app, da navegação à compreensão das informações.",
     contribution: "Experiência e apoio ao usuário",
     icon: UsersRound,
-    image: "photo-1507003211169-0a1dd7228f2d",
+    image: "/assets/MatheusFrancisco.jpeg",
     position: "center 32%",
   },
   {
@@ -37,7 +37,7 @@ const team = [
     description: "Organiza a interface para que cada informação fique clara, acessível e fácil de encontrar.",
     contribution: "Interface visual e organização",
     icon: Palette,
-    image: "photo-1504257432389-52343af06ae3",
+    image: "/assets/MatheusOliveira.jpeg",
     position: "center 32%",
   },
 ]
@@ -56,16 +56,15 @@ export default function TeamPage() {
           para um transporte público mais acessível, inclusivo e humano.
         </p>
         <div className="team-grid">
-          {team.map(({ name, role, description, contribution, icon: Icon, image, position }, index) => (
+          {team.map(({ name, role, description, contribution, icon: Icon, image, position }) => (
             <article className="team-card" key={name}>
               <Image
                 className="team-photo"
-                src={`https://images.unsplash.com/${image}?auto=format&fit=crop&crop=faces&w=800&h=560&q=80`}
+                src={image}
                 alt={`Retrato de ${name}`}
                 width={800}
                 height={560}
-                unoptimized
-                loading={index === 0 ? "eager" : "lazy"}
+                loading="eager"
                 style={{ objectPosition: position }}
               />
               <div className="team-details">
